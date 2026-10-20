@@ -46,28 +46,35 @@ Water and air are treated as one incompressible fluid whose properties change ac
 A volume fraction α marks the water (α = 1 in water, 0 in air, in between at the interface).
 Density and viscosity are mixed linearly:
 
-$$\rho = \alpha\,\rho_w + (1-\alpha)\,\rho_a, \qquad \mu = \alpha\,\mu_w + (1-\alpha)\,\mu_a .$$
+```math
+\rho = \alpha\,\rho_w + (1-\alpha)\,\rho_a, \qquad \mu = \alpha\,\mu_w + (1-\alpha)\,\mu_a .
+```
 
 **Mass conservation** (incompressible flow):
 
-$$\nabla\cdot\mathbf{u} = 0 .$$
+```math
+\nabla\cdot\mathbf{u} = 0 .
+```
 
 **Momentum conservation** (Navier–Stokes), with gravity and surface tension:
 
-$$\frac{\partial(\rho\mathbf{u})}{\partial t} + \nabla\cdot(\rho\,\mathbf{u}\mathbf{u})
- = -\nabla p + \nabla\cdot\left[\mu\left(\nabla\mathbf{u} + \nabla\mathbf{u}^{T}\right)\right]
- + \rho\,\mathbf{g} + \sigma\,\kappa\,\nabla\alpha .$$
+```math
+\frac{\partial(\rho\mathbf{u})}{\partial t} + \nabla\cdot(\rho\,\mathbf{u}\mathbf{u}) = -\nabla p + \nabla\cdot\left[\mu\left(\nabla\mathbf{u} + \nabla\mathbf{u}^{T}\right)\right] + \rho\,\mathbf{g} + \sigma\,\kappa\,\nabla\alpha .
+```
 
 **Transport of the interface** (volume of fluid):
 
-$$\frac{\partial\alpha}{\partial t} + \nabla\cdot(\alpha\,\mathbf{u})
- + \nabla\cdot\left[\alpha(1-\alpha)\,\mathbf{u}_c\right] = 0 ,$$
+```math
+\frac{\partial\alpha}{\partial t} + \nabla\cdot(\alpha\,\mathbf{u}) + \nabla\cdot\left[\alpha(1-\alpha)\,\mathbf{u}_c\right] = 0 ,
+```
 
 where the last term is an artificial compression velocity u_c, directed normal to the interface,
 that keeps the interface sharp (one to two cells thick). Surface tension acts only at the
 interface, through the curvature
 
-$$\kappa = -\nabla\cdot\left(\frac{\nabla\alpha}{|\nabla\alpha|}\right).$$
+```math
+\kappa = -\nabla\cdot\left(\frac{\nabla\alpha}{|\nabla\alpha|}\right).
+```
 
 The three equations are solved together at every time step: the velocity moves the interface, the
 interface position sets the density, viscosity and surface-tension force, and these feed back into
