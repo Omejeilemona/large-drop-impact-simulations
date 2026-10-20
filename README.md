@@ -11,8 +11,9 @@ inside the pool, and where the impact energy goes. It is independent work, not a
 authors.
 
 <p align="center">
-<img src="figures/V4_side_by_side_2d.gif" width="1000"><br>
-<em>Supplemental video 4 of the paper (a 15 ml drop, d0 = 3.06 cm, released from 95 cm). Left:
+<img src="figures/V3_side_by_side_2d.gif" width="1000"><br>
+<em>Supplemental video 3 of the paper (a 15 ml prolate drop, b/a = 3.3, d0 = 3.06 cm, released
+from 65 cm). Left:
 experiment. Middle: the same frames with the simulated air–water interface in red. Right: the
 simulated liquid fraction alpha.water (red water, blue air) on a section through the axis. All
 three panels are at the same scale and the same time after impact. Video frames: Dighe et al.
@@ -132,7 +133,7 @@ an ellipsoid. Frames: Dighe et al. (2024), CC BY 4.0.</em>
 
 ### 3.1 The sequence of events: crown, cavity, retraction, jet
 
-The simulation reproduces the sequence seen in the videos (animation at the top): the drop merges
+The simulation reproduces the sequence seen in the videos (animation at the top, and Section 3.2): the drop merges
 with the pool and pushes a crown sheet up and outward; a nearly hemispherical cavity opens below
 the surface, reaches its maximum depth, and closes from the bottom, sending a jet up the axis.
 
@@ -153,23 +154,36 @@ the pressure field.</em>
 ### 3.2 Cavity depth over time
 
 <p align="center">
-<img src="figures/V4_overlay_k.png" width="950"><br>
-<em>Video 4 with the simulated interface (red). Top row: as simulated. Bottom row: the part below
-the water line scaled by 1.15. t* = V t / d0 is the time after impact in units of d0 / V
-(7.5 ms here). Frames: Dighe et al. (2024), CC BY 4.0.</em>
+<img src="figures/videos_overlay.png" width="950"><br>
+<em>Videos 3, 4 and 5 (three drops of the same 15 ml volume) with the simulated interface (red),
+at the same scale and time after impact, with no adjustment. t* = V t / d0 is the time after
+impact in units of d0 / V (about 9 ms for video 3, 7.5 ms for video 4, 5.4 ms for video 5).
+Frames: Dighe et al. (2024), CC BY 4.0.</em>
 </p>
 
-Below the water line the simulated cavity has the right shape and timing, but it is smaller than
-the dark cavity in the image by a **constant factor of about 1.15, in width and in depth, at every
-time during growth** (t* = 2 to 8). Scaling the underwater outline by this single factor puts it
-on the cavity edge in the image (bottom row).
+<p align="center">
+<img src="figures/videos_depth.png" width="950"><br>
+<em>(a) Cavity depth against time, measured on the video frames (circles) and in the simulation
+(lines), with the same definition (bowl depth, see Section 6). (b) Ratio of the two during
+growth.</em>
+</p>
 
-A constant factor that applies equally to width and depth points to the image scale rather than
-to the physics: a missing physical effect, such as extra energy loss, would make the difference
-grow with time, and would not affect width and depth in the same proportion. The underwater part
-of the scene is seen through the tank wall and about 20 cm of water, which magnifies it relative
-to the drop in air, from which the length scale was taken. I would be glad to compare with the
-calibration used in the experiment.
+For the prolate drop (video 3) and the oblate drop (video 5), the simulated cavity sits on the
+cavity in the images at their true scale. During growth (t* = 4 to 9) the depth in the video is
+larger than the simulated depth by 6–14 % for video 3 and by 2–8 % for video 5, and the opening
+width agrees within 8 %. The simulation is therefore slightly shallow, by an amount comparable to
+the mesh effect (+3 % on refining, Section 6) and to the uncertainty of the length scale taken
+from the drop volume.
+
+For the near-spherical drop (video 4) the difference is larger: the cavity in the video is
+10–25 % deeper than in the simulation, while its opening width agrees within 10 %. The cause is
+not yet identified. It is not optical (magnification through the tank wall), because videos 3
+and 5 are processed in the same way and agree. The drop volume, release conditions and
+calibration of that run are the first things to check against the experimental records.
+
+Late in the event the simulation departs from the videos in two ways: the oblate cavity of video 5
+keeps deepening slowly in the experiment after t* ≈ 9 while the simulated one has stopped, and
+the simulated cavities close more slowly than the real ones (Section 6).
 
 Against the paper's own calibrated data (Fig. 2a, d0 = 4.14 cm), the simulated maximum depth at
 Fr = 30 is 2.05 d0, against about 1.93 d0 measured (+6 %).
@@ -186,9 +200,40 @@ paper. (The chain of small bubbles on the axis is a numerical feature of the axi
 model.)</em>
 </p>
 
-The prolate, near-spherical and oblate videos (3, 4, 5, same 15 ml volume) are being run with
-the measured drop shapes to show the same comparison for all three shapes; results will be added
-here.
+Videos 3, 4 and 5 isolate the effect of shape: the three drops have the same volume, and the
+cavity changes from deep and narrow to shallow and wide as the drop goes from prolate to oblate.
+
+<p align="center">
+<img src="figures/shapes_maxdepth.png" width="950"><br>
+<em>Simulated interface at maximum depth for the three 15 ml drops, mirrored about the axis, at
+the same scale. Lengths in d0; the dashed line is the undisturbed surface.</em>
+</p>
+
+| | Video 3, prolate | Video 4, near-spherical | Video 5, oblate |
+|---|---|---|---|
+| b/a at impact (measured) | 3.30 | 1.13 | 0.39 |
+| Fr | 39 | 55 | 109 |
+| h_max / d0, video | 2.56 | 1.85 | 1.63 |
+| h_max / d0, simulation (measured shape) | 2.40 | 1.60 | 1.46 |
+| h_max / d0, simulation (ellipsoid, same b/a) | 2.36 | 1.62 | 1.50 |
+| h_max / d0, paper's scaling 0.77 (Fr · b/a / 3)^1/4 | 1.98 | 1.65 | 1.49 |
+| h_max / D_h, video | 0.98 | 0.50 | 0.39 |
+| h_max / D_h, simulation | 0.90 | 0.44 | 0.40 |
+| h_max / D_h, paper's Eq. 7, 0.58 (b/a)^1/2 | 1.05 | 0.62 | 0.36 |
+
+The simulation reproduces the paper's first two findings: the prolate drop makes the deepest
+cavity although it is the slowest of the three, and the cavity aspect ratio h_max / D_h follows
+the drop aspect ratio. For the oblate drop the simulated maximum depth is within 3 % of the
+paper's scaling law and h_max / D_h within 11 % of Eq. 7; the video's maximum is 12 % deeper
+because the real cavity keeps deepening slowly after t* ≈ 9. For the very prolate drop of video 3
+the video and the simulation are 30 % and 21 % deeper than the scaling law: the law is a fit
+across all drops, and b/a = 3.3 is at the edge of the range it was fitted on.
+
+Replacing the measured drop shape by an ellipsoid of the same b/a changes the maximum depth by
+less than 3 %, but changes its timing: the ellipsoid reaches it earlier for the prolate drop
+(t* = 6.3 instead of 7.3), and later for the oblate drop, whose depth curve is very flat near its
+maximum (t* ≈ 13 instead of 8.8). The real prolate drop is pear-shaped, with more liquid in its upper
+part, which arrives later and keeps pushing the cavity floor down.
 
 ### 3.4 Retraction takes longer at higher Froude number (finding 5)
 
@@ -250,14 +295,13 @@ fifth is dissipated. After the maximum, the cavity energy flows back into kineti
 water as the cavity closes and the jet forms.
 
 The simulated cavity fraction for this drop (41 %, K ≈ 0.80) is higher than the paper's 27–29 %,
-which is a single fit across all drop sizes. Whether this is a difference between drops or a
-consequence of the underwater calibration discussed in 3.2 is an open question worth checking
-together.
+which is a single fit across all drop sizes. Whether this is a difference between drops, or
+related to the video 4 difference discussed in 3.2, is an open question worth checking together.
 
 ## 5. Next steps
 
-- **All three shapes at equal volume** (videos 3, 4, 5) and the remaining videos (1, 2), each with
-  the measured and the ellipsoidal drop shape.
+- **The remaining videos** (1 and 2) compared frame by frame as in Section 3.2, and the cause of
+  the video 4 difference.
 - **The remaining Fig. 2(a) cases** (d0 = 4.14 cm, Fr = 45–100) against the paper's data.
 - **Separating shape from speed.** In the experiment, a higher release gives both a faster and a
   flatter drop. In the simulation they can be set independently: fixed Fr with b/a from 0.5 to
@@ -294,8 +338,9 @@ Limitations:
   between 0.2 and 0.6 d0, and extrapolated to the axis; the same is done on the video frames.
 - The drop starts with a single speed; the internal motion from its oscillation in flight is not
   included.
-- Late in the collapse (t* > 10) the simulated cavity closes more slowly than in the experiment;
-  this is under investigation.
+- Late in the collapse (t* > 10) the simulated cavity closes more slowly than in the experiment,
+  and the slow late deepening of the oblate cavity (video 5) is not reproduced; this is under
+  investigation.
 
 ## Code and data
 
