@@ -11,10 +11,12 @@ inside the pool, and where the impact energy goes. It is independent work, not a
 authors.
 
 <p align="center">
-<img src="figures/V4_side_by_side.gif" width="760"><br>
+<img src="figures/V4_side_by_side_2d.gif" width="1000"><br>
 <em>Supplemental video 4 of the paper (a 15 ml drop, d0 = 3.06 cm, released from 95 cm). Left:
-experiment. Right: the same frames with the simulated air–water interface in red, drawn at the
-same scale and the same time after impact. Video frames: Dighe et al. (2024), CC BY 4.0.</em>
+experiment. Middle: the same frames with the simulated air–water interface in red. Right: the
+simulated liquid fraction alpha.water (red water, blue air) on a section through the axis. All
+three panels are at the same scale and the same time after impact. Video frames: Dighe et al.
+(2024), CC BY 4.0.</em>
 </p>
 
 ---
@@ -137,6 +139,16 @@ the surface, reaches its maximum depth, and closes from the bottom, sending a je
 Above the water line the simulated crown sits on the crown in the photographs with **no
 adjustment of any kind**: same height, same outward lean, same timing. This confirms the drop
 speed, the impact time and the length scale independently of the cavity.
+
+<p align="center">
+<img src="figures/V4_3d.png" width="950"><br>
+<em>The video 4 simulation in three dimensions: the computed axisymmetric interface revolved about
+the axis, with one quarter cut away to show the inside of the cavity. The cut faces show the
+pressure in the water above (red) or below (blue) the hydrostatic value, in units of
+ρ g d0 ≈ 300 Pa. From left: impact (t* = 0.9), crown and cavity growth (1.9, 3.9), maximum depth
+(8.9), and retraction with the crown rim closing above the cavity (12.9). Section 4.1 discusses
+the pressure field.</em>
+</p>
 
 ### 3.2 Cavity depth over time
 
